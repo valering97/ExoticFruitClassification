@@ -48,11 +48,11 @@ The model must accurately predict the type of fruit based on the provided data.
 - Analyze and interpret the results to identify areas for improvement.
 
 ## Project Structure
-├── data/                  # Dataset
-├── notebooks/             
-├── src/                  
-│   ├── data_processing.py   # Functions for data preparation
-│   ├── knn.py          # Function for KNN Classifier evaluation
-│   ├── constants.py       # RANDOM_STATE
-|   ├── results/           # Generated charts and reports
-├── README.md              # Project documentation
+- **`data/`**: Contains the dataset csv files.
+- **`notebooks/`**: Includes Jupyter notebooks for exploratory data analysis and visualization.
+- **`src/`**:
+  - `data_processing.py`: Functions for loading, cleaning, and preprocessing data.
+  - `knn.py`: Implements the KNN classifier and its evaluation pipeline.
+  - `constants.py`: RANDOM_STATE.
+  - `results/`: Stores generated evaluation charts, metrics, and reports.
+- **`README.md`**: Project documentation.
