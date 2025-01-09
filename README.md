@@ -46,3 +46,13 @@ The model must accurately predict the type of fruit based on the provided data.
 ### 4. Results Visualization
 - Create charts to visualize and compare the model's performance.
 - Analyze and interpret the results to identify areas for improvement.
+
+## Project Structure
+├── data/                  # Dataset
+├── notebooks/             
+├── src/                  
+│   ├── data_processing.py   # Functions for data preparation
+│   ├── knn.py          # Function for KNN Classifier evaluation
+│   ├── constants.py       # RANDOM_STATE
+|   ├── results/           # Generated charts and reports
+├── README.md              # Project documentation
