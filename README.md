@@ -1,5 +1,5 @@
 # Exotic Fruit Classification Project
-This repository is the four project of the master's degree in AI Engineering with Profession AI.
+This repository is the fourth project of the master's degree in AI Engineering with Profession AI.
 
 ## Project Overview
 The goal of this project is to develop a machine learning model capable of predicting the type of fruit based on numerical characteristics.
