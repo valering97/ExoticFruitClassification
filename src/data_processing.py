@@ -42,7 +42,7 @@ def feature_scaling(df: DataFrame, method: str = 'Standard') -> DataFrame:
         return df
 
 
-def data_split(df: DataFrame, target: str, test_size: float = 0.2) -> Tuple[DataFrame, DataFrame, DataFrame, DataFrame]:
+def df_split(df: DataFrame, target: str, test_size: float = 0.2) -> Tuple[DataFrame, DataFrame, DataFrame, DataFrame]:
     """
     Splits a DataFrame into training and testing sets.
     """
