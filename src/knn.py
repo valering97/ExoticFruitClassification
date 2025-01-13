@@ -69,8 +69,8 @@ def evaluate_model(model, X_test, y_test) -> Tuple[Figure, Figure]:
     try:
         ax = fig.add_subplot(111)
         heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
-                    xticklabels=['Arancia', 'Banana', 'Kiwi', 'Mela', 'Uva'],
-                    yticklabels=['Arancia', 'Banana', 'Kiwi', 'Mela', 'Uva'], ax=ax)
+                    xticklabels=model.classes_,
+                    yticklabels=model.classes_, ax=ax)
         plt.xlabel('Predicted', labelpad=12)
         plt.ylabel('Actual', labelpad=12)
         plt.title('Confusion Matrix')
