@@ -60,10 +60,10 @@ def evaluate_model(model, X_test, y_test) -> Tuple[Figure, Figure]:
     print(f"Accuracy: {acc:.2f}")
     
     print("Classification Report:")
-    print(classification_report(y_test, y_pred))
-    
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    
+    print(classification_report(y_test, y_pred, target_names=model.classes_))
+
+    conf_matrix = confusion_matrix(y_test, y_pred, labels=model.classes_)
+        
     fig, ax = plt.figure(figsize=(8, 6)), None
     
     try:
