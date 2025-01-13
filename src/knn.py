@@ -5,13 +5,8 @@ from typing import Tuple, Dict
 
 from pandas import DataFrame
 from numpy import mean, std
-from matplotlib.figure import Figure
-from matplotlib import pyplot as plt
-from seaborn import set_theme, heatmap
 from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix, 
-                             precision_score, recall_score, f1_score, log_loss)
 from src.constants import RANDOM_SEED
 
 
@@ -40,45 +35,6 @@ def plot_accuracy_vs_k(Ks, accuracies_train, accuracies_test):
     plt.legend()
     
     plt.show()
-
-
-def evaluate_model(model, X_test, y_test) -> Tuple[Figure, Figure]:
-    """
-    Evaluates the given model using accuracy score, classification report, and confusion matrix.
-
-    Parameters:
-    model: The trained model to evaluate.
-    X_test: The features of the test set.
-    y_test: The true labels of the test set.
-    
-    Returns:
-    Tuple[Figure, Figure]: A tuple containing the matplotlib Figure objects for the confusion matrix heatmap.
-    """
-    y_pred = model.predict(X_test)
-    
-    acc = accuracy_score(y_test, y_pred)
-    print(f"Accuracy: {acc:.2f}")
-    
-    print("Classification Report:")
-    print(classification_report(y_test, y_pred, target_names=model.classes_))
-
-    conf_matrix = confusion_matrix(y_test, y_pred, labels=model.classes_)
-        
-    fig, ax = plt.figure(figsize=(8, 6)), None
-    
-    try:
-        ax = fig.add_subplot(111)
-        heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
-                    xticklabels=model.classes_,
-                    yticklabels=model.classes_, ax=ax)
-        plt.xlabel('Predicted', labelpad=12)
-        plt.ylabel('Actual', labelpad=12)
-        plt.title('Confusion Matrix')
-    
-    except Exception as e:
-        print(f"Error plotting confusion matrix: {e}")
-    
-    return fig, ax
 
 
 def cross_validation_model(df: DataFrame, target: str, n_neighbors: int, cv: int = 5) -> DataFrame:
