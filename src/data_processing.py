@@ -3,6 +3,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.model_selection import train_test_split
 from typing import Tuple
+from src.constants import RANDOM_SEED
+
 
 def feature_scaling(df: DataFrame, method: str = 'Standard') -> DataFrame:
     """
@@ -49,7 +51,7 @@ def df_split(df: DataFrame, target: str, test_size: float = 0.2) -> Tuple[DataFr
     try:
         X = df.drop(columns=[target])
         y = df[target]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y, random_state=RANDOM_SEED)
         return X_train, X_test, y_train, y_test
 
     except KeyError:
