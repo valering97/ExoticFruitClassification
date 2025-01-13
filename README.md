@@ -54,5 +54,4 @@ The model must accurately predict the type of fruit based on the provided data.
   - `data_processing.py`: Functions for loading, cleaning, and preprocessing data.
   - `knn.py`: Implements the KNN classifier and its evaluation pipeline.
   - `constants.py`: RANDOM_STATE.
-  - `results`: Stores generated evaluation charts, metrics, and reports.
 - **`README.md`**: Project documentation.
